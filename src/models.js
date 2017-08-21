@@ -1,0 +1,1 @@
+export const fetchUser = () => Promise.resolve({ username: 'gtg092x', password: 'drake7', id: 1 });
