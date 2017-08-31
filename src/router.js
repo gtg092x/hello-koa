@@ -23,6 +23,10 @@ class ResponseError extends Error {
   }
 }
 
+router.post('/test-post/:id', async (ctx) => {
+  ctx.body = {message: 'Complete', data: ctx.data, params: ctx.params, query: ctx.query, body: ctx.request.body};
+});
+
 router.all(/(.*)/, async (ctx) => {
   ctx.status = 404;
   ctx.body = new ResponseError({message: 'Not found!', foo: 'bar'});

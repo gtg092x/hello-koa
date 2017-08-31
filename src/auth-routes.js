@@ -1,23 +1,16 @@
 import Router from 'koa-router';
 import { fetchUser } from './models';
-import jwt from 'jsonwebtoken';
+import { getTokenForUser } from './auth';
 
 const router = new Router();
 
 export function generateToken() {
   return async ctx => {
-    console.log('generating token....')
-    console.log(ctx.state)
     const { user } = ctx.state;
     if (user === false) {
       ctx.status = 401;
     } else {
-      console.log('USER GENERATE', user);
-      const _token = jwt.sign({id: user.id}, 'secret', {
-        audience: 'hixme.com',
-        issuer: 'hixme.com',
-      });
-      const token = `JWT ${_token}`;
+      const token = `JWT ${getTokenForUser(user)}`;
 
       const currentUser = await fetchUser({id: user.id});
 
