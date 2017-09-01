@@ -1,5 +1,5 @@
 import Router from 'koa-router';
-import { authMiddleware } from './passport';
+import { authMiddleware } from '../passport';
 const router = new Router();
 
 router.use(authMiddleware());

@@ -1,12 +1,11 @@
 import Router from 'koa-router';
-import helloRoutes from './hello-routes';
-import otherRoutes from './other-routes';
-import authRoutes from './auth-routes';
+import helloRoutes from './hello';
+import otherRoutes from './other';
+import authRoutes from './auth';
 
 const router = new Router();
 
 router.use('/app', helloRoutes.routes(), helloRoutes.allowedMethods());
-
 router.use('/other', otherRoutes.routes(), otherRoutes.allowedMethods());
 router.use('/auth', authRoutes.routes(), authRoutes.allowedMethods());
 

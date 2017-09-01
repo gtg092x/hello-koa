@@ -1,6 +1,6 @@
 import Router from 'koa-router';
-import { fetchUser } from './models';
-import { getTokenForUser } from './auth';
+import { fetchUser } from '../models/user';
+import { getTokenForUser } from '../passport';
 
 const router = new Router();
 

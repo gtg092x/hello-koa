@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "knex": "babel-node ./node_modules/.bin/knex",
     "dev": "babel-node src/index",
     "build": "babel src --out-dir lib --source-maps"
   },
@@ -12,17 +13,21 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "jsonwebtoken": "^7.4.3",
+    "knex": "^0.13.0",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-passport": "^3.0.0",
     "koa-router": "^7.2.1",
-    "passport-jwt": "^3.0.0"
+    "objection": "^0.8.8",
+    "passport-jwt": "^3.0.0",
+    "pg": "^7.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0"
+    "babel-preset-env": "^1.6.0",
+    "sqlite3": "^3.1.9"
   }
 }
