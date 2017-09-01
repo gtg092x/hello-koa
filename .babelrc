@@ -4,5 +4,9 @@
       "node": true
     }
   }]],
-  "plugins": ["transform-runtime", "transform-export-extensions", "transform-object-rest-spread"]
+  "plugins": [
+    ["transform-runtime", { "polyfill": false }],
+    "transform-export-extensions",
+    "transform-object-rest-spread"
+  ]
 }

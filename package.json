@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "knex": "babel-node ./node_modules/.bin/knex",
+    "knex:dev": "babel-node ./node_modules/.bin/knex --env dev",
+    "knex:int": "babel-node ./node_modules/.bin/knex --env int",
+    "knex:prod": "babel-node ./node_modules/.bin/knex --env prod",
     "dev": "babel-node src/index",
     "build": "babel src --out-dir lib --source-maps"
   },
@@ -20,7 +22,8 @@
     "koa-router": "^7.2.1",
     "objection": "^0.8.8",
     "passport-jwt": "^3.0.0",
-    "pg": "^7.2.0"
+    "pg": "^7.2.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

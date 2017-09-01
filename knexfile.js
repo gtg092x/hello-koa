@@ -5,11 +5,17 @@ module.exports = {
     connection: {
       filename: './dev.db',
     },
+    seeds: {
+      directory: './seeds/dev',
+    },
   },
   int: {
     client: 'postgresql',
     connection: {
       database: 'koa-int',
+    },
+    seeds: {
+      directory: './seeds/int',
     },
     pool: {
       min: 2,
@@ -18,6 +24,9 @@ module.exports = {
   },
   prod: {
     client: 'postgresql',
+    seeds: {
+      directory: './seeds/prod',
+    },
     connection: {
       database: 'koa-prod',
     },

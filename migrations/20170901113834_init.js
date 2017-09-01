@@ -1,7 +1,7 @@
 export const up =
     knex =>
-      knex.schema.createTable('User', table => {
-        table.uuid('id').primary();
+      knex.schema.createTable('user', table => {
+        table.uuid('id').notNullable().primary();
         table.string('firstName');
         table.string('lastName');
         table.string('email');
@@ -10,4 +10,4 @@ export const up =
 
 export const down =
     knex =>
-      knex.schema.dropTableIfExists('User');
+      knex.schema.dropTableIfExists('user');

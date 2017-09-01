@@ -16,11 +16,10 @@ export const jwtMiddleware = () => async (ctx, next) => {
   await next();
   if (ctx.state.user) {
     const token = getTokenForUser(ctx.state.user);
-    ctx.set('Authorization', token);
+    ctx.set('Authorization', `Bearer ${token}`);
     ctx.cookies.set('JWT', token);
   }
 };
-
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

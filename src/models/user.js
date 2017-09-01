@@ -1,1 +1,16 @@
-export const fetchUser = () => Promise.resolve({ username: 'gtg092x', password: 'drake7', id: 1 });
+import { Model } from 'objection';
+import { isString } from 'lodash';
+
+export default class User extends Model {
+  static get tableName() {
+    return 'user';
+  }
+  static async fetchUser(arg) {
+    const params = isString(arg)
+      ? { id: arg} :
+      arg;
+    return User.query().where(params).first();
+  }
+}
+
+export const fetchUser = arg => User.fetchUser(arg);
